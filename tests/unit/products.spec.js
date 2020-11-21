@@ -7,9 +7,9 @@ const localVue = createLocalVue()
 localVue.use(Vuex)
 const store = new Vuex.Store(myStore)
 
-describe('Pruebas componente Products.vue', () => {
+describe('Test Products', () => {
 
-  it('Filtrar los productos por nombre', () => {
+  it('Filtrar por nombre', () => {
     const productName = 'Café'
     const productSearch = 'Casa'
     const wrapper = shallowMount(Products, {

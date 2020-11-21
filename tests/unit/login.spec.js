@@ -9,7 +9,7 @@ const router = new VueRouter(myRoutes)
 
 describe('Test Login.vue', () => {
 
-    it('Muestra error si credenciales de acceso son falsas ', () => {
+    it('Error credenciales', () => {
       const wrapper = shallowMount(Login,{
           propsData: {
               credentials: {
@@ -24,7 +24,7 @@ describe('Test Login.vue', () => {
       expect(wrapper.vm.$data.formHasErrors).toEqual(true)
     }),
   
-    it('Formulario redirecciona a /home si logueo exitoso  ', () => {
+    it('Login exitoso a home', () => {
       const wrapper = shallowMount(Login,{
           localVue,
           router

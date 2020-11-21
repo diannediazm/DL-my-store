@@ -11,9 +11,9 @@ const store = new Vuex.Store(myStore)
 localVue.use(VueRouter)
 const router = new VueRouter(myRoutes)
 
-describe('Pruebas componente Navbar.vue', () => {
+describe('Test Navbar', () => {
 
-    it('Muestra ítem "Login" cuando usuario NO está logueado', () => {
+    it('Aparece login si no inició sesión', () => {
         store.dispatch('updateUser', undefined)
         const wrapper = shallowMount(Navbar, {
           propsData: {
@@ -26,7 +26,7 @@ describe('Pruebas componente Navbar.vue', () => {
         expect(wrapper.text()).toContain('Login')
       }),
 
-    it('Mostrar ítem "Usuario" cuando usuario SI está logueado', () => {
+    it('Muestra usuario si inicia sesión', () => {
         store.dispatch('updateUser', { email: 'user@mystore.com' })
         const wrapper = shallowMount(Navbar, {
             propsData: {
